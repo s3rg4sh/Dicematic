@@ -7,18 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F25A9E04289312290030C87A /* DiceDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25A9E03289312290030C87A /* DiceDot.swift */; };
+		F25A9E06289312630030C87A /* DiceDotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25A9E05289312630030C87A /* DiceDotsView.swift */; };
+		F27984C2289321AD00AF0720 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27984C1289321AD00AF0720 /* HistoryView.swift */; };
+		F27984C6289355F800AF0720 /* DataSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27984C5289355F800AF0720 /* DataSave.swift */; };
 		F2DD75A32892A00900EBC4F3 /* DicematicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DD75A22892A00900EBC4F3 /* DicematicApp.swift */; };
 		F2DD75A52892A00900EBC4F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DD75A42892A00900EBC4F3 /* ContentView.swift */; };
 		F2DD75A72892A00B00EBC4F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2DD75A62892A00B00EBC4F3 /* Assets.xcassets */; };
 		F2DD75AA2892A00B00EBC4F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2DD75A92892A00B00EBC4F3 /* Preview Assets.xcassets */; };
+		F2DD75B12892A03500EBC4F3 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DD75B02892A03500EBC4F3 /* DiceView.swift */; };
+		F2DD75B32892A06000EBC4F3 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DD75B22892A06000EBC4F3 /* Dice.swift */; };
+		F2DD75B52892AA7000EBC4F3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DD75B42892AA7000EBC4F3 /* SettingsView.swift */; };
+		F2DD75B72892D0AF00EBC4F3 /* DiceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DD75B62892D0AF00EBC4F3 /* DiceItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F25A9E03289312290030C87A /* DiceDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceDot.swift; sourceTree = "<group>"; };
+		F25A9E05289312630030C87A /* DiceDotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceDotsView.swift; sourceTree = "<group>"; };
+		F27984C1289321AD00AF0720 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		F27984C5289355F800AF0720 /* DataSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSave.swift; sourceTree = "<group>"; };
 		F2DD759F2892A00900EBC4F3 /* Dicematic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dicematic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2DD75A22892A00900EBC4F3 /* DicematicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicematicApp.swift; sourceTree = "<group>"; };
 		F2DD75A42892A00900EBC4F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F2DD75A62892A00B00EBC4F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2DD75A92892A00B00EBC4F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F2DD75B02892A03500EBC4F3 /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
+		F2DD75B22892A06000EBC4F3 /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
+		F2DD75B42892AA7000EBC4F3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F2DD75B62892D0AF00EBC4F3 /* DiceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +48,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F25A9E02289311EA0030C87A /* DiceView */ = {
+			isa = PBXGroup;
+			children = (
+				F2DD75B02892A03500EBC4F3 /* DiceView.swift */,
+				F25A9E05289312630030C87A /* DiceDotsView.swift */,
+				F25A9E03289312290030C87A /* DiceDot.swift */,
+			);
+			path = DiceView;
+			sourceTree = "<group>";
+		};
 		F2DD75962892A00900EBC4F3 = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +79,12 @@
 			children = (
 				F2DD75A22892A00900EBC4F3 /* DicematicApp.swift */,
 				F2DD75A42892A00900EBC4F3 /* ContentView.swift */,
+				F2DD75B42892AA7000EBC4F3 /* SettingsView.swift */,
+				F25A9E02289311EA0030C87A /* DiceView */,
+				F2DD75B22892A06000EBC4F3 /* Dice.swift */,
+				F2DD75B62892D0AF00EBC4F3 /* DiceItem.swift */,
+				F27984C1289321AD00AF0720 /* HistoryView.swift */,
+				F27984C5289355F800AF0720 /* DataSave.swift */,
 				F2DD75A62892A00B00EBC4F3 /* Assets.xcassets */,
 				F2DD75A82892A00B00EBC4F3 /* Preview Content */,
 			);
@@ -137,8 +169,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2DD75B52892AA7000EBC4F3 /* SettingsView.swift in Sources */,
 				F2DD75A52892A00900EBC4F3 /* ContentView.swift in Sources */,
+				F27984C6289355F800AF0720 /* DataSave.swift in Sources */,
+				F2DD75B12892A03500EBC4F3 /* DiceView.swift in Sources */,
+				F2DD75B72892D0AF00EBC4F3 /* DiceItem.swift in Sources */,
+				F25A9E04289312290030C87A /* DiceDot.swift in Sources */,
+				F2DD75B32892A06000EBC4F3 /* Dice.swift in Sources */,
 				F2DD75A32892A00900EBC4F3 /* DicematicApp.swift in Sources */,
+				F27984C2289321AD00AF0720 /* HistoryView.swift in Sources */,
+				F25A9E06289312630030C87A /* DiceDotsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +319,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = s3rg4sh.Dicematic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -308,7 +348,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = s3rg4sh.Dicematic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
