@@ -24,6 +24,7 @@ struct SettingsView: View {
                     }
                     .pickerStyle(.inline)
                     .labelsHidden()
+                    
                 }
             }
             .navigationTitle("Settings")

@@ -12,13 +12,15 @@ struct HistoryView: View {
     @Environment(\.dismiss) var dismiss
     @State private var showConfirmation = false
     
+    let generator = UINotificationFeedbackGenerator()
+    
     var body: some View {
         NavigationView {
             if dice.rolls.isEmpty {
                 Text("You didn't roll a dice!")
             } else {
                 List {
-                    ForEach(dice.rolls, id: \.id) { roll in
+                    ForEach(dice.rolls.reversed(), id: \.id) { roll in
                         Text("You rolled \(roll.value) at \(roll.date)")
                     }
                     .onDelete(perform: deleteItem)
@@ -35,6 +37,7 @@ struct HistoryView: View {
         .toolbar {
             Button {
                 showConfirmation = true
+                generator.notificationOccurred(.error)
             } label: {
                 Image(systemName: "trash")
                     .tint(.red)
@@ -43,6 +46,7 @@ struct HistoryView: View {
         .confirmationDialog("Are you sure?", isPresented: $showConfirmation) {
             Button("Clear History", role: .destructive) {
                 clearHistory()
+                generator.notificationOccurred(.success)
                 Task {
                     await DataSave().writeJSON(dice.rolls)
                 }
@@ -54,6 +58,7 @@ struct HistoryView: View {
     }
     
     func clearHistory() {
+        
         dice.rolls.removeAll()
     }
     

@@ -5,7 +5,8 @@
 //  Created by Сергій Гашенко on 29.07.2022.
 //
 
-import Foundation
+import SwiftUI
+import UIKit
 
 struct DataSave {
     let encoder = JSONEncoder()
@@ -14,14 +15,11 @@ struct DataSave {
     
     func writeJSON(_ object: [Roll]) async {
         do {
-        let directory = try FileManager.default.url(for: .desktopDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        let filePath = directory.appendingPathComponent(fileName)
-        try encoder.encode(object).write(to: filePath)
-            print("""
-                Directory: \(directory)
-                FilePath: \(filePath)
-                Object: \(object)
-                """)
+            let directory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let filePath = directory.appendingPathComponent(fileName)
+    
+            try encoder.encode(object).write(to: filePath)
+
         } catch {
             print(error.localizedDescription)
         }
@@ -29,17 +27,13 @@ struct DataSave {
     
     func loadJSON() async -> [Roll] {
             do {
-            let directory = try FileManager.default.url(for: .desktopDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            let filePath = directory.appendingPathComponent(fileName)
+                let directory = try FileManager.default.url(for: .desktopDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                let filePath = directory.appendingPathComponent(fileName)
 
-            let data = try Data(contentsOf: filePath)
-            let rolls = try decoder.decode([Roll].self, from: data)
-                print("""
-                    Directory: \(directory)
-                    FilePath: \(filePath)
-                    Rolls: \(rolls)
-                    """)
-            return rolls
+                let data = try Data(contentsOf: filePath)
+                let rolls = try decoder.decode([Roll].self, from: data)
+                    
+                return rolls
             } catch {
                 print(error.localizedDescription)
                 return []

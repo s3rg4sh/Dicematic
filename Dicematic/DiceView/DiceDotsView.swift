@@ -11,91 +11,92 @@ struct DiceDotsView: View {
      var value: Int
     
     var body: some View {
-        switch value {
+        switch value { //size: 145x145 px, dot: 35x35 px
         case 1:
             VStack {
                 DiceDot()
             }
         case 2:
-                VStack {
+                VStack(spacing: 75) {
                     DiceDot()
-                        .offset(x: 60, y: -40)
+                        .frame(width: 145, height: 35, alignment: .trailing)
                     
                     
                     DiceDot()
-                        .offset(x: -60, y: 40)
+                        .frame(width: 145, height: 35, alignment: .leading)
                 }
             
         case 3:
-                VStack {
-                    DiceDot()
-                        .offset(x: 60, y: -20)
-                    
-                    DiceDot()
-                        .offset(x: 0, y: 0)
-                    
-                    DiceDot()
-                        .offset(x: -60, y: 20)
-                }
+            VStack(spacing: 20) {
+                DiceDot()
+                    .frame(width: 145, height: 35, alignment: .trailing)
+                
+                DiceDot()
+                
+                DiceDot()
+                    .frame(width: 145, height: 35, alignment: .leading)
+            }
         case 4:
-            VStack {
-                DiceDot()
-                    .offset(x: 60, y: 5)
+            VStack(spacing: 75) {
+                HStack(spacing: 75) {
+                    DiceDot()
+                    DiceDot()
+                }
                 
-                DiceDot()
-                    .offset(x: 60, y: 80)
-                
-                DiceDot()
-                    .offset(x: -60, y: -80)
-                
-                DiceDot()
-                    .offset(x: -60, y: -5)
+                HStack(spacing: 75) {
+                    DiceDot()
+                    DiceDot()
+                }
             }
         case 5:
-            VStack {
-                DiceDot()
-                    .offset(x: 60, y: 20)
+            VStack(spacing: 20) {
+                HStack(spacing: 75) {
+                    DiceDot()
+                    DiceDot()
+                }
                 
                 DiceDot()
-                    .offset(x: -60, y: -20)
                 
-                DiceDot()
-                    .offset(x: 0, y: 0)
-                
-                DiceDot()
-                    .offset(x: 60, y: 20)
-                
-                DiceDot()
-                    .offset(x: -60, y: -20)
+                HStack(spacing: 75) {
+                    DiceDot()
+                    DiceDot()
+                }
             }
         case 6:
-            VStack {
-                DiceDot()
-                    .offset(x: 60, y: 50)
+            VStack(spacing: 75) {
+                HStack(spacing: 20) {
+                    DiceDot()
+                    DiceDot()
+                    DiceDot()
+                }
                 
-                DiceDot()
-                    .offset(x: 0, y: 7)
-                
-                DiceDot()
-                    .offset(x: -60, y: -36)
-                
-                
-                
-                DiceDot()
-                    .offset(x: 60, y: 30)
-                
-                DiceDot()
-                    .offset(x: 0, y: -13)
-                
-                DiceDot()
-                    .offset(x: -60, y: -56)
+                HStack(spacing: 20) {
+                    DiceDot()
+                    DiceDot()
+                    DiceDot()
+                }
             }
         default:
-            VStack {
-                Image(systemName: "circle.xmark")
-                    .tint(.red)
+            VStack(spacing: 75) {
+                HStack(spacing: 20) {
+                    DiceDot()
+                    DiceDot()
+                    DiceDot()
+                }
+                
+                HStack(spacing: 20) {
+                    DiceDot()
+                    DiceDot()
+                    DiceDot()
+                }
             }
         
         }
+    }
+}
+
+struct DiceDotsView_Previews: PreviewProvider {
+    static var previews: some View {
+        DiceDotsView(value: 3)
     }
 }

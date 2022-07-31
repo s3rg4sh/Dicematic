@@ -11,7 +11,7 @@ struct Dice {
     var sides: Int
     var value: Int
     
-    static var example = Dice(sides: 6, value: 6)
+    static var example = Dice(sides: 6, value: 5)
 }
 
 struct Roll: Codable, Identifiable {

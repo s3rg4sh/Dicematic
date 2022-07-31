@@ -13,9 +13,9 @@ struct DiceColor: Identifiable {
 }
 
 struct DiceView: View {
-    @State private var colorHue = 0.1
     @ObservedObject var dice: diceItem
     
+    var colorHue: Double
     var value: Int
     
     var diceColors: [DiceColor] {
@@ -27,48 +27,39 @@ struct DiceView: View {
         ]
     }
     
-    var body: some View {
-        NavigationView {
-            VStack {
-            ZStack {
-                if dice.item.sides > 6 {
-                    Text("\(dice.item.value)")
-                        .font(.system(size: 120))
-                        .frame(width: 200, height: 200, alignment: .center)
-                } else {
-                    DiceDotsView(value: value)
-                }
-                
-                RoundedRectangle(cornerRadius: 25)
-                    .strokeBorder()
-                    .overlay {
-                        HStack(spacing: 0) {
-                            ForEach(diceColors, id: \.id) { item in
-                                item.color
-                            }
-                        }
-                        .blur(radius: 20)
-                        .mask(
-                            RoundedRectangle(cornerRadius: 25)
-                                .stroke(lineWidth: 10)
-                        )
-                    }
-                    .frame(width: 200, height: 200)
-                    .onTapGesture {
-                        withAnimation(.linear) {
-                            colorHue = Double.random(in: 0.3...1.0)
-                        }
-                    }
+var body: some View {
+    VStack {
+        ZStack {
+            if dice.item.sides > 6 {
+                Text("\(dice.item.value)")
+                    .font(.system(size: 120))
+                    .frame(width: 200, height: 200, alignment: .center)
+            } else {
+                DiceDotsView(value: value)
             }
-            Spacer(minLength: 95)
+            
+            RoundedRectangle(cornerRadius: 25)
+                .opacity(0)
+                .overlay {
+                    HStack(spacing: 0) {
+                        ForEach(diceColors, id: \.id) { item in
+                            item.color
+                        }
+                    }
+                    .blur(radius: 20)
+                    .mask(
+                        RoundedRectangle(cornerRadius: 25)
+                            .stroke(lineWidth: 10)
+                    )
+                }
+                .frame(width: 200, height: 200)
             }
         }
-        .frame(width: 220, height: 220)
     }
 }
 
 struct DiceView_Previews: PreviewProvider {
     static var previews: some View {
-        DiceView(dice: diceItem(), value: Dice.example.value)
+        DiceView(dice: diceItem(), colorHue: 0.1, value: Dice.example.value)
     }
 }
